@@ -1,0 +1,6 @@
+#git status --ignored
+.idea
+*.iml
+~$*
+**/target
+*.log
