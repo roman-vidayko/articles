@@ -1,0 +1,36 @@
+[
+  {
+    "customerServices": [
+      {
+        "serviceId": "1",
+        "serviceName": "Service One",
+        "serviceDescription": "Description of Service One",
+        "agreement": {
+          "userId": "u1",
+          "agreementNumber": "000-001",
+          "agreementDate": "2025-01-01"
+        }
+      }
+    ],
+    "agreement": {
+      "user": {
+        "userId": "u1",
+        "userName": "user1",
+        "email": "user1@domain.org",
+        "password": "secret1",
+        "firstName": "Willy",
+        "lastName": "Wonka",
+        "dob": "1941-04-01"
+      },
+      "agreementId": "000-001",
+      "agreementDate": "2025-01-01"
+    },
+    "expected": [
+      {
+        "id": 1,
+        "name": "Service One",
+        "description": "Description of Service One"
+      }
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CustomerService",
+  "type": "object",
+  "required": [
+    "serviceId",
+    "serviceName",
+    "serviceDescription",
+    "agreementID"
+  ],
+  "properties": {
+    "serviceId": {
+      "type": "integer"
+    },
+    "serviceName": {
+      "type": "string"
+    },
+    "serviceDescription": {
+      "type": "string"
+    },
+    "agreement": {
+      "$ref": "CustomerAgreement.json"
+    }
+  }
+}
