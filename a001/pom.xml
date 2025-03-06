@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.vidayko</groupId>
+    <artifactId>articles</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>a001</artifactId>
+
+  <properties>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.18.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.34</version>
+    </dependency>
+
+    <!-- TEST -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.17.0</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jsonschema2pojo</groupId>
+        <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+        <version>1.2.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <sourceDirectory>${basedir}/src/main/resources/schema</sourceDirectory>
+          <targetPackage>com.vidayko</targetPackage>
+          <includeHashcodeAndEquals>false
+          </includeHashcodeAndEquals> <!-- No hashCode() or equals() -->
+          <includeToString>false</includeToString> <!-- No toString() -->
+          <includeGeneratedAnnotation>false
+          </includeGeneratedAnnotation> <!-- Suppress @Generated annotation -->
+          <includeAdditionalProperties>false
+          </includeAdditionalProperties> <!-- No additional properties map -->
+          <usePrimitives>true</usePrimitives> <!-- Use primitive types where applicable -->
+          <generateBuilders>false</generateBuilders> <!-- No builder methods -->
+          <annotationStyle>none</annotationStyle> <!-- Disable Javadoc comments -->
+          <includeGetters>true</includeGetters> <!-- Add getters -->
+          <includeSetters>false</includeSetters> <!-- No setters -->
+          <removeOldOutput>true</removeOldOutput> <!-- Clear old files -->
+          <customAnnotator>org.jsonschema2pojo.NoopAnnotator</customAnnotator>
+          <includeConstructors>true</includeConstructors> <!-- Enable constructors -->
+          <dateType>java.util.Date</dateType>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

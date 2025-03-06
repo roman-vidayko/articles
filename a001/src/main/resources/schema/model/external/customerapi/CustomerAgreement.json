@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CustomerAgreement",
+  "type": "object",
+  "required": [
+    "userId",
+    "agreementDate"
+  ],
+  "properties": {
+    "userId": {
+      "type": "string",
+      "description": "Unique user ID"
+    },
+    "agreementNumber": {
+      "type": "string",
+      "description": "Unique Agreement Number"
+    },
+    "agreementDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Agreement date"
+    }
+  }
+}
