@@ -17,6 +17,7 @@
   <packaging>pom</packaging>
   <modules>
     <module>a001</module>
+    <module>tax-calculator-cli</module>
   </modules>
 
   <properties>
