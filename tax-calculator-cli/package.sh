@@ -1,0 +1,1 @@
+git archive --format=zip --output=./tax-calculator-cli.zip master
